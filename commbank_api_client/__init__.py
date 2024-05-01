@@ -63,12 +63,13 @@ class Client:
         res = await self._session.get("https://www.commbank.com.au/retail/netbank/api/home/v1/accounts",
                                 headers=self._headers)
         res_json = await res.json()
+
         return list(map(lambda x: Account(
             acc_number=x["number"],
             id=x["link"]["url"].replace("/retail/netbank/accounts/?account=", ""),
             name=x["displayName"],
             balance=float(x["balance"][0]["amount"]),
-            funds=float(x["availableFunds"][0]["amount"]),
+            funds=float(x["availableFunds"][0]["amount"]) if x["availableFunds"] != [] else [],
             currency=x["balance"][0]["currency"]
         ), res_json['accounts']))
 
