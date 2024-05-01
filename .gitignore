@@ -1,3 +1,6 @@
 commbank_api_client.egg-info
 dist
 .idea
+secrets.yaml
+credentials.json
+*.pyc
