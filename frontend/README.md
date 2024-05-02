@@ -1,0 +1,2 @@
+- set up Google Sheets API with the Google Cloud Project
+- make sure to add test user https://stackoverflow.com/questions/75454425/access-blocked-project-has-not-completed-the-google-verification-process
